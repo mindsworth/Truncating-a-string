@@ -1,6 +1,19 @@
 function truncateString(str, num) {
   // Clear out that junk in your trunk
-  return str;
+  var a;  
+  var sliceStr;
+  var strLen = str.length;
+  if(strLen <= 3 || num < 3) {
+    sliceStr = str.slice(0, num) + "...";
+    return sliceStr;
+  } else if(num >= strLen) {
+    return str;
+  } else {
+    a = num - 3;
+    sliceStr = str.slice(0, a) + "...";
+    return sliceStr;
+  }
+  
 }
 
-truncateString("A-tisket a-tasket A green and yellow basket", 11);
+truncateString("Absolutely Longer", 2);
